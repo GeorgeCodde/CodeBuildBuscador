@@ -1,0 +1,54 @@
+{
+    "cdk_pipeline": {
+        "pipeline_name": "CDKPipelineEnvVar",
+        "repository_name": "<repo name>",
+        "repository_owner": "<owner name>",
+        "branch": "main",
+        "build_environment": {
+            "account": "<account id>",
+            "region": "<region>"
+        }
+    },
+    "environments": {
+        "dev": {
+            "VpcName": "MADOAWSTSVPCSEG01",
+            "redisKey": "buscador:5",
+            "bucketName": "pruebasbuscador2023",
+            "fileName": "buscador.json",
+            "emailSub": "jorgels120878@gmail.com",
+            "name": "dev",
+            "repositoryURI": "436809821380.dkr.ecr.us-east-1.amazonaws.com/pruebasaul:latest",
+            "env": {
+                "account": "436809821380",
+                "region": "us-east-2"
+            }
+        },
+        "test": {
+            "VpcName": "VpcbuscadorDevMadoStack/vpc-10.3.0.0--16",
+            "bucketName": "sourcebucket1598463058",
+            "idLocalCompany":"60",
+            "name": "test",
+            "ecrName": "pocbuscadorecr",
+            "imageTag": "LATEST",
+            "repositoryURI": "436809821380.dkr.ecr.us-east-1.amazonaws.com/pruebasaul:latest",
+            "env": {
+                "account": "436809821380",
+                "region": "us-east-1"
+            }
+        },
+        "qa": {
+            "VpcName": "VpcbuscadorDevMadoStack/vpc-10.3.0.0--16",
+            "redisKey": "buscador:5",
+            "bucketName": "pocbuscador1598463058",
+            "idLocalCompany":"66,65,60,59,53,51,5",
+            "fileName": "buscador.json",
+            "emailSub": "jorgels120878@gmail.com",
+            "name": "qa",
+            "repositoryURI": "436809821380.dkr.ecr.us-east-1.amazonaws.com/pruebasaul:latest",
+            "env": {
+                "account": "436809821380",
+                "region": "us-east-2"
+            }
+        }
+    }
+}
